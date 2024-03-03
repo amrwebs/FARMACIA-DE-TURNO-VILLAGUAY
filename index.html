@@ -97,23 +97,6 @@
             margin-left: 10px;
         }
     </style>
-
-    <!-- Configuración de Firebase -->
-    <script type="module">
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "Tu-API-Key",
-            authDomain: "Tu-auth-domain",
-            projectId: "Tu-project-id",
-            storageBucket: "Tu-storage-bucket",
-            messagingSenderId: "Tu-messaging-sender-id",
-            appId: "Tu-app-id"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-    </script>
 </head>
 
 <body>
@@ -146,19 +129,17 @@
         };
 
         function cargarProductosAlmacenados() {
-            db.collection("productos").get().then((querySnapshot) => {
-                var listaProductos = document.getElementById("listaProductos");
+            var productos = JSON.parse(localStorage.getItem('productos')) || [];
+            var listaProductos = document.getElementById("listaProductos");
 
-                listaProductos.innerHTML = "";
+            listaProductos.innerHTML = "";
 
-                querySnapshot.forEach((doc) => {
-                    var producto = doc.data();
-                    var listItem = document.createElement("li");
-                    listItem.innerHTML = "<strong>" + producto.nombre + "</strong> - Precio: $" + producto.precio +
-                        "<img src='" + producto.imagen + "' alt='" + producto.nombre + "' class='imagenProducto'>" +
-                        "<button class='eliminar' onclick='eliminarProducto(\"" + doc.id + "\")'>Eliminar</button>";
-                    listaProductos.appendChild(listItem);
-                });
+            productos.forEach(function (producto) {
+                var listItem = document.createElement("li");
+                listItem.innerHTML = "<strong>" + producto.nombre + "</strong> - Precio: $" + producto.precio +
+                    "<img src='" + producto.imagen + "' alt='" + producto.nombre + "' class='imagenProducto'>" +
+                    "<button class='eliminar' onclick='eliminarProducto(\"" + producto.nombre + "\")'>Eliminar</button>";
+                listaProductos.appendChild(listItem);
             });
         }
 
@@ -178,27 +159,24 @@
                 imagen: URL.createObjectURL(imagenProducto)
             };
 
-            db.collection("productos").add(nuevoProducto)
-                .then(function (docRef) {
-                    console.log("Producto registrado con ID: ", docRef.id);
-                    cargarProductosAlmacenados();
-                })
-                .catch(function (error) {
-                    console.error("Error al agregar el producto: ", error);
-                });
+            var productos = JSON.parse(localStorage.getItem('productos')) || [];
+            productos.push(nuevoProducto);
+            localStorage.setItem('productos', JSON.stringify(productos));
+
+            cargarProductosAlmacenados();
 
             document.getElementById("nombreProducto").value = "";
             document.getElementById("precioProducto").value = "";
             document.getElementById("imagenProducto").value = ""; // Limpiar el campo de imagen
         }
 
-        function eliminarProducto(idProducto) {
-            db.collection("productos").doc(idProducto).delete().then(function () {
-                console.log("Producto eliminado correctamente");
-                cargarProductosAlmacenados();
-            }).catch(function (error) {
-                console.error("Error al eliminar el producto: ", error);
+        function eliminarProducto(nombreProducto) {
+            var productos = JSON.parse(localStorage.getItem('productos')) || [];
+            productos = productos.filter(function (producto) {
+                return producto.nombre !== nombreProducto;
             });
+            localStorage.setItem('productos', JSON.stringify(productos));
+            cargarProductosAlmacenados();
         }
     </script>
 </body>
