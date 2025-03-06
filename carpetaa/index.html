@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmacia de Turno</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #93eeb8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 36px;
+        }
+        .farmacia {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .farmacia p {
+            font-size: 18px;
+        }
+        .farmacia h2 {
+            color: #007BFF;
+        }
+        .fecha {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+        .farmacias-lista {
+            margin-top: 20px;
+            padding-top: 10px;
+        }
+        .farmacia-item {
+            padding: 8px;
+            margin-bottom: 10px;
+            background-color: #08c7a4;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .direccion {
+            font-style: italic;
+            color: #000000;
+            margin-top: 10px;
+        }
+        .resaltado {
+            background-color: #f39c12;
+            font-weight: bold;
+            color: #fff;
+        }
+        .informacion-farmacia {
+            margin-top: 20px;
+        }
+        .informacion-farmacia div {
+            margin-bottom: 10px;
+            padding: 8px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+        }
+        .informacion-farmacia .resaltado {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .informacion-farmacia label {
+            font-weight: bold;
+        }
+        .turno-titulo h1 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        /* Estilos para el recuadro de donaciones */
+        .donaciones {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .donaciones h2 {
+            color: #007BFF;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .cvu {
+            background-color: #ffffff;
+            border: 2px solid #007BFF;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #007BFF;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div style="text-align: center;">
+                    <ul style="list-style: none; padding: 0; display: inline-flex; gap: 20px;">
+                        <li><a href="#farmacias">Lista de Farmacias</a></li>
+                        <li><a href="https://www.google.com/maps/search/farmacias+villaguay/@-31.8643836,-59.0341459,14.75z?entry=ttu&g_ep=EgoyMDI1MDMwMy4wIKXMDSoASAFQAw%3D%3D">Mapa de farmacias</a></li>
+                        <li><a href="https://wa.me/message/4JYHTJHRW2NBI1">Reporte de problemas</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="turno-titulo">
+            <h1>Hoy está de turno la farmacia:</h1>
+        </div>
+
+        <div class="informacion-farmacia">
+            <div id="nombreFarmaciaDiv">
+                <label>Nombre:</label>
+                <span id="nombreFarmacia"></span>
+            </div>
+            <div id="telefonoFarmaciaDiv">
+                <label>Número:</label>
+                <span id="telefonoFarmacia"></span>
+            </div>
+            <div id="direccionFarmaciaDiv">
+                <label>Dirección:</label>
+                <span id="direccionFarmacia"></span>
+            </div>
+        </div>
+
+        <div class="fecha">
+            <p>Fecha de actualización: <span id="fechaActual"></span></p>
+        </div>
+
+        <div class="farmacias-lista" id="farmacias">
+            <h2>Farmacias:</h2>
+            <div class="farmacia-item" id="farmacia1">La Botica - Colon 411 - 03455-499552</div>
+            <div class="farmacia-item" id="farmacia2">Caffaratti - Leopoldo Herra & Tucuman - 03455-422274</div>
+            <div class="farmacia-item" id="farmacia3">Del Pueblo - Colon 560 - 03455-499084</div>
+            <div class="farmacia-item" id="farmacia4">Farma Plus - Moreno & 25 de mayo - 03455-499084</div>
+            <div class="farmacia-item" id="farmacia5">Bidegorry - Leopoldo Herra & Frias - 03455 42-2205</div>
+            <div class="farmacia-item" id="farmacia6">Augustus - Balcarce 301 - 03455-422216</div>
+            <div class="farmacia-item" id="farmacia7">Francia - Balcarce 960 - 03455-15533711</div>
+            <div class="farmacia-item" id="farmacia8">La Entrerriana - Moreno & 9 de Julio - 03455-423943</div>
+            <div class="farmacia-item" id="farmacia9">San Martin - San Martin & Michelena - 03455-424290</div>
+            <div class="farmacia-item" id="farmacia10">Villaguay - San Martin 425 - 03455-421040</div>
+            <div class="farmacia-item" id="farmacia11">Del Sol - Leolpoldo Herrara & Caseros - 03455-423782</div>
+            <div class="farmacia-item" id="farmacia12">Luis Tres - 25 de mayo 454 - 03455-422959</div>
+            <div class="farmacia-item" id="farmacia13">Nueva Urquiza - Urquiza & Moreno - 03455-424422</div>
+        </div>
+
+        <!-- Sección de Donaciones -->
+        <div class="donaciones">
+            <h2>Donaciones</h2>
+            <div class="cvu">
+                CVU: 0000003100077102139732
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lista de farmacias, usando su nombre, dirección y teléfono
+        const farmacias = [
+            { nombre: 'La Botica', direccion: 'Colon 411', telefono: '03455-499552' },
+            { nombre: 'Caffaratti', direccion: 'Leopoldo Herra & Tucuman', telefono: '03455-422274' },
+            { nombre: 'Del Pueblo', direccion: 'Colon 560', telefono: '03455-499084' },
+            { nombre: 'Farma Plus', direccion: 'Moreno & 25 de mayo', telefono: '03455-499084' },
+            { nombre: 'Bidegorry', direccion: 'Leopoldo Herra & Frias', telefono: '03455 42-2205' },
+            { nombre: 'Augustus', direccion: 'Balcarce 301', telefono: '03455-422216' },
+            { nombre: 'Francia', direccion: 'Balcarce 960', telefono: '03455-15533711' },
+            { nombre: 'La Entrerriana', direccion: '', telefono: '03455-423943' },
+            { nombre: 'San Martin', direccion: '', telefono: '03455-424290' },
+            { nombre: 'Villaguay', direccion: '', telefono: '03455-421040' },
+            { nombre: 'Del Sol', direccion: '', telefono: '' },
+            { nombre: 'Luis Tres', direccion: '', telefono: '' },
+            { nombre: 'Nueva Urquiza', direccion: '', telefono: '' }
+        ];
+
+        // Obtener la fecha de hoy
+        const fechaHoy = new Date();
+        const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+        const diaHoy = diasSemana[fechaHoy.getDay()]; // Obtiene el día de la semana
+
+        // Usamos el día actual para determinar la farmacia de turno
+        const farmaciaTurnoIndex = 4; // El jueves está en el índice 4
+        const farmaciaTurno = farmacias[farmaciaTurnoIndex]; // Obtener la farmacia de turno (Bidegorry)
+
+        // Mostrar los detalles de la farmacia de turno
+        document.getElementById("nombreFarmacia").textContent = farmaciaTurno.nombre;
+        document.getElementById("telefonoFarmacia").textContent = farmaciaTurno.telefono;
+        document.getElementById("direccionFarmacia").textContent = farmaciaTurno.direccion;
+
+        // Cambiar el fondo y color de la farmacia de turno
+        document.getElementById("nombreFarmaciaDiv").classList.add('resaltado');
+        document.getElementById("telefonoFarmaciaDiv").classList.add('resaltado');
+        document.getElementById("direccionFarmaciaDiv").classList.add('resaltado');
+
+        // Mostrar la fecha de actualización
+        document.getElementById("fechaActual").textContent = `${diaHoy}, ${fechaHoy.getDate()} de ${fechaHoy.toLocaleString('default', { month: 'long' })} de ${fechaHoy.getFullYear()}`;
+
+        // Resaltar la farmacia de turno en la lista
+        const farmaciaItems = document.querySelectorAll('.farmacia-item');
+        farmaciaItems.forEach((item, index) => {
+            if (index === farmaciaTurnoIndex) {
+                item.classList.add('resaltado');
+            }
+        });
+    </script>
+</body>
+</html>
