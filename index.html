@@ -211,9 +211,10 @@
         const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
         const diaHoy = diasSemana[fechaHoy.getDay()]; // Obtiene el día de la semana
 
-        // Usamos el día actual para determinar la farmacia de turno
-        const farmaciaTurnoIndex = 5; // El jueves está en el índice 4
-        const farmaciaTurno = farmacias[farmaciaTurnoIndex]; // Obtener la farmacia de turno (Bidegorry)
+        // Ajustamos el índice para que se reinicie después de la última farmacia (índice 13)
+        const farmaciaTurnoIndex = (fechaHoy.getDate() - 1) % farmacias.length; // Modifica el índice para que sea cíclico
+
+        const farmaciaTurno = farmacias[farmaciaTurnoIndex]; // Obtener la farmacia de turno según el día
 
         // Mostrar los detalles de la farmacia de turno
         document.getElementById("nombreFarmacia").textContent = farmaciaTurno.nombre;
