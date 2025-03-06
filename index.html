@@ -206,13 +206,13 @@
             { nombre: 'Nueva Urquiza', direccion: '', telefono: '' }
         ];
 
-        // Obtener la fecha de hoy
+        // Obtener la fecha y hora actual
         const fechaHoy = new Date();
         const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-        const diaHoy = diasSemana[fechaHoy.getDay()]; // Obtiene el día de la semana
+        const diaHoy = diasSemana[fechaHoy.getDay()];
 
-        // Ajustamos el índice para que se reinicie después de la última farmacia (índice 13)
-        const farmaciaTurnoIndex = (fechaHoy.getDate() - 1) % farmacias.length; // Modifica el índice para que sea cíclico
+        // Si es antes de las 8 AM, mostrar la farmacia del día anterior
+        const farmaciaTurnoIndex = (fechaHoy.getDate() - 1 + (fechaHoy.getHours() >= 8 ? 0 : -1)) % farmacias.length;
 
         const farmaciaTurno = farmacias[farmaciaTurnoIndex]; // Obtener la farmacia de turno según el día
 
