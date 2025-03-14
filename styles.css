@@ -278,3 +278,242 @@ header nav a {
 .farmacia-item .direccion {
     font-size: 14px;
 }
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #93eeb8;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 20px;
+    overflow-x: hidden; /* Evita desplazamientos horizontales no deseados */
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 900px; /* Limita el tamaño máximo */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Títulos */
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.2rem; /* Usamos rem para una mejor accesibilidad */
+}
+
+/* Estilos del encabezado de navegación */
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #007BFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+header nav a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Título de turno */
+.turno-titulo {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem; /* Ajuste para que no ocupe mucho espacio */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Información de la farmacia */
+.informacion-farmacia {
+    margin-bottom: 30px;
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.informacion-farmacia div {
+    margin-bottom: 20px;
+}
+
+.informacion-farmacia label {
+    font-weight: bold;
+    color: #007BFF;
+    font-size: 16px;
+}
+
+.informacion-farmacia span {
+    font-size: 18px;
+    color: #333;
+    margin-left: 10px;
+}
+
+/* Información de fecha y reloj */
+.fecha, .reloj {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Estilos de las farmacias en la lista */
+.farmacias-lista {
+    margin-top: 30px;
+}
+
+.farmacia-item {
+    background-color: #08c7a4;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.farmacia-item:hover {
+    background-color: #009688;
+    transform: translateY(-3px);
+}
+
+.farmacia-item .direccion {
+    font-style: italic;
+    color: #000000;
+    margin-top: 10px;
+}
+
+.resaltado {
+    background-color: #f39c12;
+    font-weight: bold;
+    color: #fff;
+}
+
+.donaciones {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.donaciones h2 {
+    color: #007BFF;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cvu {
+    background-color: #ffffff;
+    border: 2px solid #007BFF;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Reloj */
+.reloj {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Estilo para la información destacada */
+.informacion-farmacia .resaltado {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Apilar los elementos de navegación */
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Ajustar tamaño de fuente */
+    }
+
+    .turno-titulo {
+        font-size: 1.5rem; /* Ajuste en móviles */
+    }
+
+    .informacion-farmacia {
+        padding: 15px;
+    }
+
+    .informacion-farmacia label {
+        font-size: 14px; /* Reducir tamaño de fuente */
+    }
+
+    .informacion-farmacia span {
+        font-size: 16px; /* Reducir tamaño de fuente */
+    }
+
+    .farmacia-item {
+        font-size: 14px; /* Reducir tamaño de fuente */
+        padding: 10px; /* Asegurarse de que no esté demasiado comprimido */
+    }
+
+    footer {
+        font-size: 10px;
+    }
+
+    .donaciones h2 {
+        font-size: 18px;
+    }
+
+    .cvu {
+        font-size: 16px; /* Reducir el tamaño de la CVU */
+    }
+}
