@@ -20,10 +20,10 @@ const fechaHoy = new Date();
 const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
 const diaHoy = diasSemana[fechaHoy.getDay()];
 
+// Calcular el índice de la farmacia de turno basado en el día de la semana
 // Si es antes de las 8 AM, mostrar la farmacia del día anterior
 const farmaciaTurnoIndex = (fechaHoy.getDate() - 1 + (fechaHoy.getHours() >= 8 ? 0 : -1)) % farmacias.length;
-
-const farmaciaTurno = farmacias[farmaciaTurnoIndex]; // Obtener la farmacia de turno según el día
+const farmaciaTurno = farmacias[farmaciaTurnoIndex];
 
 // Mostrar los detalles de la farmacia de turno
 document.getElementById("nombreFarmacia").textContent = farmaciaTurno.nombre;
