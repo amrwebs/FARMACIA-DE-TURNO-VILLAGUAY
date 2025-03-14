@@ -18,6 +18,7 @@ body {
     padding: 20px;
 }
 
+/* Contenedor principal */
 .container {
     width: 80%;
     max-width: 1000px;
@@ -28,12 +29,14 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Títulos */
 h1 {
     text-align: center;
     color: #333;
     font-size: 36px;
 }
 
+/* Encabezado de navegación */
 header nav ul {
     list-style: none;
     padding: 0;
@@ -58,6 +61,7 @@ header nav a:hover {
     transform: scale(1.05);
 }
 
+/* Estilos para el título de turno */
 .turno-titulo {
     text-align: center;
     margin-bottom: 30px;
@@ -66,6 +70,7 @@ header nav a:hover {
     color: #333;
 }
 
+/* Información de la farmacia */
 .informacion-farmacia {
     margin-bottom: 30px;
     background-color: #f0f8ff;
@@ -101,6 +106,7 @@ header nav a:hover {
     margin-top: 30px;
 }
 
+/* Elementos de la lista de farmacias */
 .farmacia-item {
     background-color: #08c7a4;
     padding: 15px;
@@ -190,7 +196,13 @@ a:hover {
 /* Responsividad */
 @media (max-width: 768px) {
     .container {
-        padding: 15px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Apilar los elementos de navegación en lugar de horizontal */
+        gap: 10px;
     }
 
     h1 {
@@ -215,9 +227,54 @@ a:hover {
 
     .farmacia-item {
         font-size: 16px;
+        padding: 12px; /* Hacer el texto más legible y aumentar el área de clic */
     }
 
     footer {
         font-size: 12px;
     }
+
+    .donaciones {
+        padding: 15px;
+    }
+
+    .donaciones h2 {
+        font-size: 24px;
+    }
+
+    .donaciones .cvu {
+        font-size: 18px;
+    }
+}
+
+/* Hacer que el header de la página sea más accesible en móviles */
+header {
+    width: 100%;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+header nav li {
+    margin: 5px 10px;
+}
+
+header nav a {
+    padding: 8px 15px;
+    font-size: 16px;
+}
+
+/* Mejora la visibilidad de los elementos de la lista de farmacias */
+.farmacia-item {
+    font-size: 16px;
+    padding: 12px;
+    margin: 5px 0;
+}
+
+.farmacia-item .direccion {
+    font-size: 14px;
 }
