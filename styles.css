@@ -36,21 +36,28 @@ body {
 h1 {
     text-align: center;
     color: #333;
-    font-size: 3rem;
+    font-size: 2.5rem; /* Reducir el tamaño del título */
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 15px; /* Reducir el espacio debajo del título */
 }
 
 /* Estilo del encabezado de navegación */
+header {
+    display: flex;
+    justify-content: space-between; /* Para dejar espacio para el logo */
+    align-items: center;
+    margin-bottom: 10px; /* Reducir el espacio debajo del encabezado */
+}
+
 header nav ul {
     list-style: none;
-    display: inline-flex;
-    gap: 20px;
+    display: flex;
+    gap: 20px; /* Espacio entre los elementos */
 }
 
 header nav li {
     background-color: #e1f7f1;
-    padding: 12px 20px;
+    padding: 10px 15px; /* Reducir el tamaño del padding */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
@@ -58,7 +65,7 @@ header nav li {
 
 header nav a {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px; /* Reducir el tamaño de la fuente */
     color: #007BFF;
     font-weight: bold;
     text-transform: uppercase;
@@ -73,13 +80,18 @@ header nav a:hover {
     color: #fff;
 }
 
+header .logo {
+    width: 80px; /* Tamaño del logo */
+    height: auto;
+}
+
 /* Información de la farmacia */
 .informacion-farmacia {
     background-color: #f0f8ff;
-    padding: 25px;
+    padding: 20px; /* Reducir el padding */
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* Reducir el margen inferior */
     width: 100%;
     max-width: 500px;
 }
@@ -90,7 +102,7 @@ header nav a:hover {
 }
 
 .informacion-farmacia span {
-    font-size: 20px;
+    font-size: 18px; /* Reducir el tamaño de la fuente */
     color: #333;
     margin-left: 10px;
 }
@@ -98,18 +110,18 @@ header nav a:hover {
 /* Fecha y reloj */
 .fecha, .reloj {
     text-align: center;
-    font-size: 18px;
+    font-size: 16px; /* Reducir el tamaño de la fuente */
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 15px; /* Reducir el margen superior */
 }
 
 /* Lista de farmacias */
 .farmacias-lista {
     background-color: #e1f7f1;
-    padding: 20px;
+    padding: 15px; /* Reducir el padding */
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
+    margin-top: 20px; /* Reducir el margen superior */
     width: 100%;
     max-width: 600px;
 }
@@ -117,7 +129,7 @@ header nav a:hover {
 .farmacia-item {
     background-color: #08c7a4;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Reducir el margen inferior */
     border-radius: 8px;
     color: white;
     text-align: center;
@@ -137,22 +149,22 @@ header nav a:hover {
 
 /* Mapa de farmacias */
 .mapa-farmacias, .reporte-problemas, .donaciones {
-    margin-top: 30px;
-    padding: 20px;
+    margin-top: 20px; /* Reducir el margen superior */
+    padding: 15px; /* Reducir el padding */
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .mapa-farmacias h2, .reporte-problemas h2, .donaciones h2 {
-    font-size: 24px;
+    font-size: 20px; /* Reducir el tamaño de la fuente */
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reducir el margen inferior */
 }
 
 .mapa-farmacias iframe {
     width: 100%;
-    height: 400px;
+    height: 300px; /* Reducir la altura del mapa */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -161,8 +173,8 @@ header nav a:hover {
 button {
     background-color: #007BFF;
     color: white;
-    font-size: 12px; /* Botón más pequeño */
-    padding: 6px 12px; /* Botón más pequeño */
+    font-size: 10px; /* Reducir el tamaño del botón */
+    padding: 6px 12px; /* Reducir el tamaño del padding */
     border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
@@ -185,8 +197,8 @@ button:active {
 
 /* Estilo de "Ir a Donaciones" */
 .ir-donaciones-btn {
-    font-size: 8px; /* Botón más pequeño */
-    padding: 4px 8px; /* Botón más pequeño */
+    font-size: 8px; /* Reducir el tamaño de la fuente */
+    padding: 4px 8px; /* Reducir el tamaño del padding */
     border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
