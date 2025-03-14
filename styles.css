@@ -61,15 +61,28 @@ header nav a {
 }
 
 header nav a:hover {
-    background-color: #0056b3;
+    background-color: #000000;
     transform: scale(1.05);
+}
+
+/* Estilo para el enlace de Donaciones */
+.donar-link {
+    color: #00a859;
+}
+
+.donar-link:hover {
+    background-color: #00a859;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
 }
 
 /* Título de turno */
 .turno-titulo {
     text-align: center;
     margin-bottom: 30px;
-    font-size: 2rem; /* Ajuste para que no ocupe mucho espacio */
+    font-size: 2rem;
     font-weight: bold;
     color: #333;
 }
@@ -89,7 +102,7 @@ header nav a:hover {
 
 .informacion-farmacia label {
     font-weight: bold;
-    color: #007BFF;
+    color: #000000;
     font-size: 16px;
 }
 
@@ -141,6 +154,7 @@ header nav a:hover {
     color: #fff;
 }
 
+/* Estilo para la sección de Donaciones */
 .donaciones {
     margin-top: 30px;
     padding: 20px;
@@ -188,29 +202,7 @@ header nav a:hover {
     font-size: 18px;
     font-weight: bold;
     color: #007BFF;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-footer {
     text-align: center;
-    font-size: 12px;
-    color: #333;
-    margin-top: 20px;
-}
-
-/* Reloj */
-.reloj {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    margin-top: 10px;
-}
-
-/* Estilo para la información destacada */
-.informacion-farmacia .resaltado {
-    background-color: #007BFF;
-    color: #fff;
 }
 
 /* Responsividad para pantallas pequeñas */
@@ -221,16 +213,16 @@ footer {
     }
 
     header nav ul {
-        flex-direction: column; /* Apilar los elementos de navegación */
+        flex-direction: column;
         gap: 10px;
     }
 
     h1 {
-        font-size: 1.8rem; /* Ajustar tamaño de fuente */
+        font-size: 1.8rem;
     }
 
     .turno-titulo {
-        font-size: 1.5rem; /* Ajuste en móviles */
+        font-size: 1.5rem;
     }
 
     .informacion-farmacia {
@@ -238,16 +230,16 @@ footer {
     }
 
     .informacion-farmacia label {
-        font-size: 14px; /* Reducir tamaño de fuente */
+        font-size: 14px;
     }
 
     .informacion-farmacia span {
-        font-size: 16px; /* Reducir tamaño de fuente */
+        font-size: 16px;
     }
 
     .farmacia-item {
-        font-size: 14px; /* Reducir tamaño de fuente */
-        padding: 10px; /* Asegurarse de que no esté demasiado comprimido */
+        font-size: 14px;
+        padding: 10px;
     }
 
     footer {
@@ -257,8 +249,30 @@ footer {
     .donaciones h2 {
         font-size: 18px;
     }
+}
 
-    .cvu {
-        font-size: 16px; /* Reducir el tamaño de la CVU */
-    }
+/* Estilo del nuevo botón "Ir a Donaciones" */
+.ir-donaciones-btn {
+    background-color: #00a859; /* Verde MercadoPago */
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.ir-donaciones-btn:hover {
+    background-color: #007a40; /* Verde más oscuro al hacer hover */
+    transform: scale(1.05);
+}
+
+.ir-donaciones-btn:focus {
+    outline: none;
+}
+
+.ir-donaciones-btn:active {
+    background-color: #006837; /* Verde aún más oscuro al hacer clic */
 }

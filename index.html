@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Farmacia de Turno</title>
-    
     <!-- Vincula el archivo CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,6 +17,8 @@
                         <li><a href="#farmacias">Lista de Farmacias</a></li>
                         <li><a href="https://www.google.com/maps/search/farmacias+villaguay/@-31.8643836,-59.0341459,14.75z?entry=ttu&g_ep=EgoyMDI1MDMwMy4wIKXMDSoASAFQAw%3D%3D">Mapa de farmacias</a></li>
                         <li><a href="https://wa.me/message/4JYHTJHRW2NBI1">Reporte de problemas</a></li>
+                        <li><a href="#donaciones" class="donar-link">Donaciones</a></li>
+                        <li><button class="ir-donaciones-btn" onclick="scrollToDonaciones()">Ir a Donaciones</button></li>
                     </ul>
                 </div>
             </nav>
@@ -68,7 +69,7 @@
         </div>
 
         <!-- Sección de Donaciones -->
-        <div class="donaciones">
+        <div class="donaciones" id="donaciones">
             <h2>Donaciones</h2>
             <a href="https://link.mercadopago.com.ar/donacionesamr" target="_blank">
                 <button>Donar</button>
@@ -81,5 +82,12 @@
     </footer>
 
     <script src="farmacia-turno.js"></script>
+    <!-- Script para el desplazamiento hacia las donaciones -->
+    <script>
+        function scrollToDonaciones() {
+            const donacionesSection = document.getElementById('donaciones');
+            donacionesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
