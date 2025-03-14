@@ -276,3 +276,245 @@ header nav a:hover {
 .ir-donaciones-btn:active {
     background-color: #006837; /* Verde aún más oscuro al hacer clic */
 }
+
+/* Estilo para todos los botones */
+button {
+    background-color: #007BFF; /* Fondo azul similar al color de los enlaces */
+    color: white; /* Color de la letra */
+    font-size: 16px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro al hacer hover */
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    background-color: #003f7f; /* Azul aún más oscuro al hacer clic */
+}
+
+/* Estilo específico para el botón "Ir a Donaciones" */
+.ir-donaciones-btn {
+    background-color: #00a859; /* Fondo verde MercadoPago */
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.ir-donaciones-btn:hover {
+    background-color: #007a40; /* Verde más oscuro al hacer hover */
+    transform: scale(1.05);
+}
+
+.ir-donaciones-btn:focus {
+    outline: none;
+}
+
+.ir-donaciones-btn:active {
+    background-color: #006837; /* Verde aún más oscuro al hacer clic */
+}
+
+/* Estilo específico para el botón "Donar" */
+.donaciones button {
+    background-color: #00a859; /* Fondo verde MercadoPago */
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.donaciones button:hover {
+    background-color: #007a40; /* Verde más oscuro al hacer hover */
+}
+
+.donaciones button:focus {
+    outline: none;
+}
+
+.donaciones button:active {
+    background-color: #006837; /* Verde aún más oscuro al hacer clic */
+}
+
+/* Estilo para todos los botones con fondo redondeado */
+button {
+    background-color: #007BFF; /* Fondo azul suave */
+    color: white; /* Color del texto */
+    font-size: 16px;
+    padding: 12px 25px;
+    border: 2px solid #0056b3; /* Borde azul oscuro que contrasta */
+    border-radius: 30px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Efecto hover para todos los botones */
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro cuando se pasa el ratón */
+    border-color: #003f7f; /* El borde se oscurece también */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+}
+
+/* Efecto cuando el botón es presionado */
+button:active {
+    background-color: #003f7f; /* Azul aún más oscuro al hacer clic */
+    border-color: #002a52; /* Borde más oscuro al presionar */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
+}
+
+/* Estilo específico para el botón "Ir a Donaciones" */
+.ir-donaciones-btn {
+    background-color: #00a859; /* Fondo verde MercadoPago */
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 2px solid #007a40; /* Borde verde oscuro */
+    border-radius: 30px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Efecto hover para el botón "Ir a Donaciones" */
+.ir-donaciones-btn:hover {
+    background-color: #007a40; /* Verde más oscuro cuando se pasa el ratón */
+    border-color: #005e31; /* Borde más oscuro */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+}
+
+/* Efecto cuando el botón "Ir a Donaciones" es presionado */
+.ir-donaciones-btn:active {
+    background-color: #006837; /* Verde aún más oscuro al hacer clic */
+    border-color: #004f2c; /* Borde más oscuro al presionar */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
+}
+
+/* Estilo específico para el botón "Donar" */
+.donaciones button {
+    background-color: #00a859; /* Fondo verde MercadoPago */
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: 2px solid #007a40; /* Borde verde oscuro */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Efecto hover para el botón "Donar" */
+.donaciones button:hover {
+    background-color: #007a40; /* Verde más oscuro cuando se pasa el ratón */
+    border-color: #005e31; /* Borde más oscuro */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+}
+
+/* Efecto cuando el botón "Donar" es presionado */
+.donaciones button:active {
+    background-color: #006837; /* Verde aún más oscuro al hacer clic */
+    border-color: #004f2c; /* Borde más oscuro al presionar */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
+}
+
+/* Estilo general para los enlaces de navegación */
+.navegacion-btn {
+    background-color: #4CAF50; /* Fondo verde que combine con el color de la farmacia */
+    color: white;              /* Texto blanco */
+    padding: 10px 20px;        /* Espaciado interno */
+    border-radius: 25px;       /* Bordes redondeados */
+    text-decoration: none;     /* Quitar subrayado */
+    font-weight: bold;         /* Texto en negrita */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Efecto de hover para los enlaces de navegación */
+.navegacion-btn:hover {
+    background-color: #45a049; /* Cambio de fondo cuando pasa el mouse */
+    transform: scale(1.1);      /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
+
+/* Estilo específico para los botones dentro de la sección de Donaciones */
+.donar-link {
+    background-color: #ff9800; /* Fondo anaranjado para el botón de donaciones */
+    color: white;              /* Texto blanco */
+    padding: 12px 25px;        /* Espaciado interno */
+    border-radius: 25px;       /* Bordes redondeados */
+    text-decoration: none;     /* Quitar subrayado */
+    font-weight: bold;         /* Texto en negrita */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Efecto de hover para el botón de donaciones */
+.donar-link:hover {
+    background-color: #e68900; /* Cambio de fondo cuando pasa el mouse */
+    transform: scale(1.1);      /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
+
+/* Estilo general para los elementos de la lista de farmacias */
+.farmacia-item {
+    background-color: #4CAF50;  /* Fondo verde similar al de la botonera */
+    color: white;               /* Texto blanco */
+    padding: 10px 20px;         /* Espaciado interno */
+    margin: 10px 0;             /* Espaciado entre elementos */
+    border-radius: 25px;        /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición */
+}
+
+/* Efecto de hover para los elementos de la lista de farmacias */
+.farmacia-item:hover {
+    background-color: #45a049;  /* Cambio de fondo al pasar el mouse */
+    transform: scale(1.05);      /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
+
+/* Estilo para el título de la lista de farmacias */
+.farmacias-lista h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Estilo para los botones en el footer */
+footer button {
+    background-color: #4CAF50; /* Fondo verde */
+    color: white;              /* Texto blanco */
+    padding: 10px 20px;        /* Espaciado interno */
+    border-radius: 25px;       /* Bordes redondeados */
+    font-weight: bold;         /* Texto en negrita */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Efecto de hover para los botones del footer */
+footer button:hover {
+    background-color: #45a049;  /* Cambio de fondo al pasar el mouse */
+    transform: scale(1.05);      /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
