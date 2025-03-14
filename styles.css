@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #93eeb8;
     color: #333;
     line-height: 1.6;
@@ -16,13 +16,13 @@ body {
     min-height: 100vh;
     flex-direction: column;
     padding: 20px;
-    overflow-x: hidden; /* Evita desplazamientos horizontales no deseados */
+    overflow-x: hidden;
 }
 
 /* Contenedor principal */
 .container {
     width: 100%;
-    max-width: 900px; /* Limita el tamaño máximo */
+    max-width: 900px;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -30,16 +30,19 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /* Títulos */
 h1 {
     text-align: center;
     color: #333;
-    font-size: 2.2rem; /* Usamos rem para una mejor accesibilidad */
+    font-size: 3rem; /* Título más grande */
+    font-weight: bold;
+    margin-bottom: 30px;
 }
 
-/* Estilos del encabezado de navegación */
+/* Estilo del encabezado de navegación */
 header nav ul {
     list-style: none;
     padding: 0;
@@ -49,51 +52,46 @@ header nav ul {
     gap: 20px;
 }
 
+header nav li {
+    background-color: #e1f7f1; /* Fondo similar al de la lista de farmacias */
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
 header nav a {
     text-decoration: none;
     font-size: 16px;
     color: #007BFF;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 8px 15px;
-    border-radius: 30px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+}
+
+header nav li:hover {
+    background-color: #08c7a4;
+    transform: scale(1.05);
 }
 
 header nav a:hover {
     background-color: #000000;
+    color: #fff;
     transform: scale(1.05);
-}
-
-/* Estilo para el enlace de Donaciones */
-.donar-link {
-    color: #00a859;
-}
-
-.donar-link:hover {
-    background-color: #00a859;
-    color: white;
-    border-radius: 5px;
-    padding: 5px 10px;
-    transition: all 0.3s ease;
-}
-
-/* Título de turno */
-.turno-titulo {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
 }
 
 /* Información de la farmacia */
 .informacion-farmacia {
     margin-bottom: 30px;
     background-color: #f0f8ff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .informacion-farmacia div {
@@ -102,35 +100,42 @@ header nav a:hover {
 
 .informacion-farmacia label {
     font-weight: bold;
-    color: #000000;
-    font-size: 16px;
+    color: #000;
+    font-size: 18px;
 }
 
 .informacion-farmacia span {
-    font-size: 18px;
+    font-size: 20px;
     color: #333;
     margin-left: 10px;
 }
 
-/* Información de fecha y reloj */
+/* Fecha y reloj */
 .fecha, .reloj {
     text-align: center;
-    margin-top: 20px;
-    font-size: 16px;
+    font-size: 18px;
     color: #333;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 /* Estilos de las farmacias en la lista */
 .farmacias-lista {
     margin-top: 30px;
+    width: 100%;
+    max-width: 600px;
+    background-color: #e1f7f1; /* Fondo de la lista */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .farmacia-item {
     background-color: #08c7a4;
-    padding: 12px;
-    margin-bottom: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
     color: white;
     cursor: pointer;
@@ -144,23 +149,96 @@ header nav a:hover {
 
 .farmacia-item .direccion {
     font-style: italic;
-    color: #000000;
+    color: #000;
     margin-top: 10px;
 }
 
-.resaltado {
-    background-color: #f39c12;
-    font-weight: bold;
-    color: #fff;
+/* Fondo de la sección de mapa */
+.mapa-farmacias {
+    margin-top: 30px;
+    background-color: #f0f8ff; /* Fondo de la sección de mapa */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-/* Estilo para la sección de Donaciones */
+.mapa-farmacias h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.mapa-farmacias iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Fondo de la sección de reporte de problemas */
+.reporte-problemas {
+    margin-top: 30px;
+    background-color: #e1f7f1; /* Fondo del reporte de problemas */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.reporte-problemas h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.reporte-problemas form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reporte-problemas input,
+.reporte-problemas textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.reporte-problemas button {
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.reporte-problemas button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.reporte-problemas button:focus {
+    outline: none;
+}
+
+.reporte-problemas button:active {
+    background-color: #003f7f;
+}
+
+/* Fondo de la sección de donaciones */
 .donaciones {
     margin-top: 30px;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -170,9 +248,8 @@ header nav a:hover {
     margin-bottom: 10px;
 }
 
-/* Estilo del botón de donaciones */
 .donaciones button {
-    background-color: #00a859; /* Verde MercadoPago */
+    background-color: #00a859;
     color: white;
     font-size: 18px;
     padding: 15px 30px;
@@ -184,7 +261,7 @@ header nav a:hover {
 }
 
 .donaciones button:hover {
-    background-color: #007a40; /* Verde más oscuro al hacer hover */
+    background-color: #007a40;
 }
 
 .donaciones button:focus {
@@ -192,37 +269,90 @@ header nav a:hover {
 }
 
 .donaciones button:active {
-    background-color: #006837; /* Verde aún más oscuro al hacer clic */
+    background-color: #006837;
 }
 
-.cvu {
-    background-color: #ffffff;
-    border: 2px solid #007BFF;
-    padding: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #007BFF;
+/* Estilo para el botón "Ir a Donaciones" */
+.ir-donaciones-btn {
+    background-color: #00a859;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.ir-donaciones-btn:hover {
+    background-color: #007a40;
+    transform: scale(1.05);
+}
+
+.ir-donaciones-btn:focus {
+    outline: none;
+}
+
+.ir-donaciones-btn:active {
+    background-color: #006837;
+}
+
+/* Estilo para todos los botones */
+button {
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    background-color: #003f7f;
+}
+
+footer {
+    width: 100%;
+    margin-top: 30px;
     text-align: center;
+}
+
+footer button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
 }
 
 /* Responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
     .container {
-        width: 100%;
         padding: 15px;
     }
 
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
     h1 {
-        font-size: 1.8rem;
-    }
-
-    .turno-titulo {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .informacion-farmacia {
@@ -249,272 +379,8 @@ header nav a:hover {
     .donaciones h2 {
         font-size: 18px;
     }
-}
 
-/* Estilo del nuevo botón "Ir a Donaciones" */
-.ir-donaciones-btn {
-    background-color: #00a859; /* Verde MercadoPago */
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-transform: uppercase;
-}
-
-.ir-donaciones-btn:hover {
-    background-color: #007a40; /* Verde más oscuro al hacer hover */
-    transform: scale(1.05);
-}
-
-.ir-donaciones-btn:focus {
-    outline: none;
-}
-
-.ir-donaciones-btn:active {
-    background-color: #006837; /* Verde aún más oscuro al hacer clic */
-}
-
-/* Estilo para todos los botones */
-button {
-    background-color: #007BFF; /* Fondo azul similar al color de los enlaces */
-    color: white; /* Color de la letra */
-    font-size: 16px;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-transform: uppercase;
-}
-
-button:hover {
-    background-color: #0056b3; /* Azul más oscuro al hacer hover */
-    transform: scale(1.05);
-}
-
-button:focus {
-    outline: none;
-}
-
-button:active {
-    background-color: #003f7f; /* Azul aún más oscuro al hacer clic */
-}
-
-/* Estilo específico para el botón "Ir a Donaciones" */
-.ir-donaciones-btn {
-    background-color: #00a859; /* Fondo verde MercadoPago */
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-transform: uppercase;
-}
-
-.ir-donaciones-btn:hover {
-    background-color: #007a40; /* Verde más oscuro al hacer hover */
-    transform: scale(1.05);
-}
-
-.ir-donaciones-btn:focus {
-    outline: none;
-}
-
-.ir-donaciones-btn:active {
-    background-color: #006837; /* Verde aún más oscuro al hacer clic */
-}
-
-/* Estilo específico para el botón "Donar" */
-.donaciones button {
-    background-color: #00a859; /* Fondo verde MercadoPago */
-    color: white;
-    font-size: 18px;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-}
-
-.donaciones button:hover {
-    background-color: #007a40; /* Verde más oscuro al hacer hover */
-}
-
-.donaciones button:focus {
-    outline: none;
-}
-
-.donaciones button:active {
-    background-color: #006837; /* Verde aún más oscuro al hacer clic */
-}
-
-/* Estilo para todos los botones con fondo redondeado */
-button {
-    background-color: #007BFF; /* Fondo azul suave */
-    color: white; /* Color del texto */
-    font-size: 16px;
-    padding: 12px 25px;
-    border: 2px solid #0056b3; /* Borde azul oscuro que contrasta */
-    border-radius: 30px; /* Bordes redondeados */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    text-transform: uppercase;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-/* Efecto hover para todos los botones */
-button:hover {
-    background-color: #0056b3; /* Azul más oscuro cuando se pasa el ratón */
-    border-color: #003f7f; /* El borde se oscurece también */
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
-}
-
-/* Efecto cuando el botón es presionado */
-button:active {
-    background-color: #003f7f; /* Azul aún más oscuro al hacer clic */
-    border-color: #002a52; /* Borde más oscuro al presionar */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
-}
-
-/* Estilo específico para el botón "Ir a Donaciones" */
-.ir-donaciones-btn {
-    background-color: #00a859; /* Fondo verde MercadoPago */
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: 2px solid #007a40; /* Borde verde oscuro */
-    border-radius: 30px; /* Bordes redondeados */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    text-transform: uppercase;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-/* Efecto hover para el botón "Ir a Donaciones" */
-.ir-donaciones-btn:hover {
-    background-color: #007a40; /* Verde más oscuro cuando se pasa el ratón */
-    border-color: #005e31; /* Borde más oscuro */
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
-}
-
-/* Efecto cuando el botón "Ir a Donaciones" es presionado */
-.ir-donaciones-btn:active {
-    background-color: #006837; /* Verde aún más oscuro al hacer clic */
-    border-color: #004f2c; /* Borde más oscuro al presionar */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
-}
-
-/* Estilo específico para el botón "Donar" */
-.donaciones button {
-    background-color: #00a859; /* Fondo verde MercadoPago */
-    color: white;
-    font-size: 18px;
-    padding: 15px 30px;
-    border: 2px solid #007a40; /* Borde verde oscuro */
-    border-radius: 8px; /* Bordes redondeados */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    text-transform: uppercase;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-/* Efecto hover para el botón "Donar" */
-.donaciones button:hover {
-    background-color: #007a40; /* Verde más oscuro cuando se pasa el ratón */
-    border-color: #005e31; /* Borde más oscuro */
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
-}
-
-/* Efecto cuando el botón "Donar" es presionado */
-.donaciones button:active {
-    background-color: #006837; /* Verde aún más oscuro al hacer clic */
-    border-color: #004f2c; /* Borde más oscuro al presionar */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
-}
-
-/* Estilo general para los enlaces de navegación */
-.navegacion-btn {
-    background-color: #4CAF50; /* Fondo verde que combine con el color de la farmacia */
-    color: white;              /* Texto blanco */
-    padding: 10px 20px;        /* Espaciado interno */
-    border-radius: 25px;       /* Bordes redondeados */
-    text-decoration: none;     /* Quitar subrayado */
-    font-weight: bold;         /* Texto en negrita */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-}
-
-/* Efecto de hover para los enlaces de navegación */
-.navegacion-btn:hover {
-    background-color: #45a049; /* Cambio de fondo cuando pasa el mouse */
-    transform: scale(1.1);      /* Aumenta ligeramente el tamaño al pasar el ratón */
-}
-
-/* Estilo específico para los botones dentro de la sección de Donaciones */
-.donar-link {
-    background-color: #ff9800; /* Fondo anaranjado para el botón de donaciones */
-    color: white;              /* Texto blanco */
-    padding: 12px 25px;        /* Espaciado interno */
-    border-radius: 25px;       /* Bordes redondeados */
-    text-decoration: none;     /* Quitar subrayado */
-    font-weight: bold;         /* Texto en negrita */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-}
-
-/* Efecto de hover para el botón de donaciones */
-.donar-link:hover {
-    background-color: #e68900; /* Cambio de fondo cuando pasa el mouse */
-    transform: scale(1.1);      /* Aumenta ligeramente el tamaño al pasar el ratón */
-}
-
-/* Estilo general para los elementos de la lista de farmacias */
-.farmacia-item {
-    background-color: #4CAF50;  /* Fondo verde similar al de la botonera */
-    color: white;               /* Texto blanco */
-    padding: 10px 20px;         /* Espaciado interno */
-    margin: 10px 0;             /* Espaciado entre elementos */
-    border-radius: 25px;        /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición */
-}
-
-/* Efecto de hover para los elementos de la lista de farmacias */
-.farmacia-item:hover {
-    background-color: #45a049;  /* Cambio de fondo al pasar el mouse */
-    transform: scale(1.05);      /* Aumenta ligeramente el tamaño al pasar el ratón */
-}
-
-/* Estilo para el título de la lista de farmacias */
-.farmacias-lista h2 {
-    text-align: center;
-    font-size: 24px;
-    color: #333;
-    margin-top: 20px;
-}
-
-/* Estilo para los botones en el footer */
-footer button {
-    background-color: #4CAF50; /* Fondo verde */
-    color: white;              /* Texto blanco */
-    padding: 10px 20px;        /* Espaciado interno */
-    border-radius: 25px;       /* Bordes redondeados */
-    font-weight: bold;         /* Texto en negrita */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-}
-
-/* Efecto de hover para los botones del footer */
-footer button:hover {
-    background-color: #45a049;  /* Cambio de fondo al pasar el mouse */
-    transform: scale(1.05);      /* Aumenta ligeramente el tamaño al pasar el ratón */
+    .mapa-farmacias iframe {
+        height: 300px;
+    }
 }
